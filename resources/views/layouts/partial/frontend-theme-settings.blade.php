@@ -1,27 +1,33 @@
+@if(!Route::currentRouteNamed('event.reg'))
 <div class="popup-modal modal fade" tabindex="-1" id="sg-modal-add">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
-            <!-- Close Button (Bootstrap 4 uses 'close' class and 'data-dismiss') -->
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; top: -2px; right: 2px; color: #222; z-index:999;"> <span aria-hidden="true">&times;</span></button>
+            <!-- Close Button -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; top: -2px; right: 2px; color: #222; z-index:999;"> 
+                <span aria-hidden="true">&times;</span>
+            </button>
 
             <div class="modal-body">
-                <img src="{{asset('public/frontend')}}/images/pop-add-banner.jpg" style="width:100%" alt="">
-                <div class="text-center"><a href="{{route('event.reg')}}" class="btn btn-sm btn-primary mt-2">Register</a></div>
+                <img src="{{ asset('public/frontend/images/pop-add-banner.jpg') }}" style="width:100%" alt="">
+                <div class="text-center">
+                    <a href="{{ route('event.reg') }}" class="btn btn-sm btn-primary mt-2">Register</a>
+                </div>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+@endif
 
-{{-- <script>
+
+<script>
     document.addEventListener("DOMContentLoaded", function () {
         // Show the modal when the page loads (Bootstrap 4 version)
         $('#sg-modal-add').modal('show');
     });
-</script> --}}
+</script>
 
 
-
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function () {
         // Check if the modal has been shown before using sessionStorage
         if (!sessionStorage.getItem('modalShown')) {
@@ -44,4 +50,4 @@
             }
         });
     });
-</script>
+</script> -->

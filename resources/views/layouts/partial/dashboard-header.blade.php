@@ -145,9 +145,12 @@
 				</div>
 			</li>
 			<li class="nav-item nav-logout d-none d-lg-block">
-				<a class="nav-link" href="#">
-					<i class="mdi mdi-power"></i>
-				</a>
+				<form method="POST" action="{{ route('logout') }}">
+					@csrf
+					<a class="nav-link" href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
+						<i class="mdi mdi-power"></i>
+					</a>
+				</form>
 			</li>
 			<li class="nav-item nav-settings d-none d-lg-block">
 				<a class="nav-link" href="#">
@@ -155,8 +158,7 @@
 				</a>
 			</li>
 		</ul>
-		<button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
-			data-toggle="offcanvas">
+		<button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
 			<span class="mdi mdi-menu"></span>
 		</button>
 	</div>

@@ -23,6 +23,7 @@ class CreateSuperUserSeeder extends Seeder
         $user = User::create([
             'name' => 'Super Admin',
             'email' => 'super@gmail.com',
+            'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
         $role = Role::findByName('SuperAdmin');

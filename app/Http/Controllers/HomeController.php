@@ -25,6 +25,16 @@ class HomeController extends Controller
         $user = Auth::user();
         return view('pages.frontend.message', compact('user'));
     }
+    public function services(Request $request): View
+    {
+        $user = Auth::user();
+        return view('pages.frontend.services', compact('user'));
+    }
+    public function studyAbroad(Request $request): View
+    {
+        $user = Auth::user();
+        return view('pages.frontend.study-abroad', compact('user'));
+    }
     public function galleryPhoto(Request $request): View
     {
         $user = Auth::user();
@@ -59,6 +69,10 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         return view('pages.frontend.event-reg', compact('user'));
+    }
+    public function congratulation(Request $request): View
+    {
+        return view('pages.frontend.congratulation');
     }
     
     

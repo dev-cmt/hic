@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Response;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EventController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,9 +41,10 @@ Route::get('/page-services', [HomeController::class, 'services'])->name('page.se
 Route::get('/page-study-abroad', [HomeController::class, 'studyAbroad'])->name('page.study-abroad');
 
 
-Route::get('/why-choose', [HomeController::class, 'whyChoose'])->name('why.choose');
-Route::get('/event-reg', [HomeController::class, 'eventReg'])->name('event.reg');
+Route::get('/page-why-choose', [HomeController::class, 'whyChoose'])->name('why.choose');
+Route::get('/page-event-reg', [HomeController::class, 'eventReg'])->name('event.reg');
 
+Route::get('/page-congratulation', [HomeController::class, 'congratulation'])->name('page.congratulation');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile-index', [ProfileController::class, 'profileIndex'])->name('profile.index');
@@ -59,11 +61,17 @@ Route::group(['middleware' => ['auth']], function() {
 });
 
 /**-------------------------------------------------------------------------
- * KEY : PATIENT REGISTATION PART
+ * KEY : ADMIN PART
  * -------------------------------------------------------------------------
  */
+
+Route::post('/event-register/store', [EventController::class, 'eventRegisterStore'])->name('event-register.store');
+
 Route::middleware('auth')->group(function () {
-    Route::delete('/pages-about', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('events', EventController::class);
+    Route::get('/event-register/index', [EventController::class, 'eventRegisterIndex'])->name('event-register.index');
+    Route::get('/event-register/{id}/show', [EventController::class, 'eventRegisterShow'])->name('event-register.show');
+
 });
 
 

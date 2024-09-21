@@ -87,8 +87,8 @@
 				<div class="col-md-9">
 					<nav class="itsoft_menu">
 						<ul class="nav_scroll">
-							<li><a href="{{ route('home') }}" class="{{ Route::currentRouteNamed('home') ? 'text-primary' : '' }}">Home</a></li>
-                            <li><a href="{{ route('page.about') }}" class="{{ Route::currentRouteNamed('page.about') ? 'text-primary' : '' }}">About Us</a></li>
+						<li><a href="{{ url('/') }}" class="{{ Request::is('/') ? 'text-primary' : '' }}">Home</a></li>                            
+<li><a href="{{ route('page.about') }}" class="{{ Route::currentRouteNamed('page.about') ? 'text-primary' : '' }}">About Us</a></li>
 
                             <li><a href="{{route('page.message')}}">Message</a></li>
 							<li>
@@ -140,7 +140,7 @@
         <div class="mobile-menu">
             <nav class="itsoft_menu">
                 <ul class="nav_scroll">
-                    <li><a href="{{route('home')}}">Home</a></li>
+                    <li><a href="{{url('/')}}">Home</a></li>
                     <li><a href="{{route('page.about')}}">About Us</a></li>
                     <li><a href="{{route('page.message')}}">Message</a></li>
                     <li>

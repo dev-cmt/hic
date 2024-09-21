@@ -1,4 +1,4 @@
-@if (Request::is('event-reg'))
+@if (Request::is('page-event-reg') || Request::is('page-congratulation'))
     
 @else
     <!--==================================================-->

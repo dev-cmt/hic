@@ -1,4 +1,5 @@
 <x-frontend-layout :title="'Event Register'">
+@if($latestEvent)
     <!--==================================================-->
 	<!-----Start Header Slider Section----->
 	<!--===================================================-->
@@ -28,76 +29,102 @@
 							<h3>Register for events below</h3>
 						</div>
 						<div class="appointment-form-section">
-							<form action="#" method="POST" id="dreamit-form">
+							<form action="{{ route('event-register.store') }}" method="POST" id="dreamit-form">
+								@csrf
+								<input type="hidden" name="event_id" value="{{ $latestEvent->id }}">
 								<div class="row">
+									<!-- Name -->
 									<div class="col-lg-12">
 										<div class="form_box mb-15">
-											<input type="text" name="name"  placeholder="Name">
+											<input type="text" name="name" placeholder="Name" class="form-control" required>
 										</div>
 									</div>
+
+									<!-- Email -->
 									<div class="col-lg-12">
 										<div class="form_box mb-15">
-											<input type="email" name="email" placeholder="Email Address">
+											<input type="email" name="email" placeholder="Email Address" class="form-control" required>
 										</div>
 									</div>
+
+									<!-- Phone -->
 									<div class="col-lg-12">
 										<div class="form_box mb-15">
-											<input type="phone" name="phone" placeholder="Phone Number">
+											<input type="text" name="phone" placeholder="Phone Number" class="form-control" required>
 										</div>
 									</div>
+
+									<!-- Preferred Location -->
 									<div class="col-lg-12">
-										<select class="Your Inquiry About form-box-input">
-											<option>Preferred Location</option>
-											<option>Dhaka Office</option>
-											<option>Chittagong Office</option>
-										</select>
+										<div class="form_box mb-15">
+											<select name="location" class="form-control" required>
+												<option value="">Preferred Location</option>
+												<option value="Dhaka Office">Dhaka Office</option>
+												<option value="Chittagong Office">Chittagong Office</option>
+											</select>
+										</div>
 									</div>
+
+									<!-- Preferred Destination -->
 									<div class="col-lg-12">
-										<select class="Your Inquiry About form-box-input">
-											<option>Your preferred study destination</option>
-											<option>Australia</option>
-											<option>Canada</option>
-											<option>Germany</option>
-											<option>Dubai</option>
-											<option> Malaysia</option>
-											<option> Mailta</option>
-											<option> New Zealand</option>
-											<option>UK</option>
-											<option> USA</option>
-											<option> Others</option>											
-										</select>
+										<div class="form_box mb-15">
+											<select name="destination" class="form-control" required>
+												<option value="">Your preferred study destination</option>
+												<option value="Australia">Australia</option>
+												<option value="Canada">Canada</option>
+												<option value="Germany">Germany</option>
+												<option value="Dubai">Dubai</option>
+												<option value="Malaysia">Malaysia</option>
+												<option value="Malta">Malta</option>
+												<option value="New Zealand">New Zealand</option>
+												<option value="UK">UK</option>
+												<option value="USA">USA</option>
+												<option value="Others">Others</option>
+											</select>
+										</div>
 									</div>
-										<div class="col-lg-12">
-										<select class="Your Inquiry About form-box-input">
-											<option>Your Last Academic Qualification?</option>
-											<option>O Level/ SSC</option>
-											<option>A Level/ HSC</option>
-											<option>Bachelor</option>
-											<option> Masters</option>
-											<option> PHD</option>
-											<option> Others</option>											
-										</select>
-									</div>
-										<div class="col-lg-12">
-										<select class="Your Inquiry About form-box-input">
-											<option>IELTS/PTE Score?</option>
-											<option>9</option>
-											<option>8 or 8.5</option>
-											<option>7 or 7.5 / 65-79</option>
-											<option> 6 or 6.5 / 51-64</option>
-											<option> 5 or 5.5 / 35-50</option>
-											<option> I haven't taken English proficiency yet.</option>			
-											<option> Others</option>								
-										</select>
-									</div>
-									
+
+									<!-- Academic Qualification -->
 									<div class="col-lg-12">
-										<div class="quote_btn text_center">
-											<button class="btn" type="submit">Help me study abroad</button>
+										<div class="form_box mb-15">
+											<select name="qualification" class="form-control" required>
+												<option value="">Your Last Academic Qualification?</option>
+												<option value="O Level/ SSC">O Level/ SSC</option>
+												<option value="A Level/ HSC">A Level/ HSC</option>
+												<option value="Bachelor">Bachelor</option>
+												<option value="Masters">Masters</option>
+												<option value="PhD">PhD</option>
+												<option value="Others">Others</option>
+											</select>
+										</div>
+									</div>
+
+									<!-- IELTS/PTE Score -->
+									<div class="col-lg-12">
+										<div class="form_box mb-15">
+											<select name="score" class="form-control" required>
+												<option value="">IELTS/PTE Score?</option>
+												<option value="9">9</option>
+												<option value="8 or 8.5">8 or 8.5</option>
+												<option value="7 or 7.5 / 65-79">7 or 7.5 / 65-79</option>
+												<option value="6 or 6.5 / 51-64">6 or 6.5 / 51-64</option>
+												<option value="5 or 5.5 / 35-50">5 or 5.5 / 35-50</option>
+												<option value="No English proficiency">I haven't taken English proficiency yet</option>
+												<option value="Others">Others</option>
+											</select>
+										</div>
+									</div>
+
+									<!-- Submit Button -->
+									<div class="col-lg-12">
+										<div class="quote_btn text-center">
+											<button class="btn btn-primary" type="submit">Help me study abroad</button>
 										</div>
 									</div>
 								</div>
 							</form>
+
+
 							<p class="form-message"></p>
 						</div>
 					</div>
@@ -105,4 +132,10 @@
 			</div>
 		</div>
 	</div>
+
+@else
+	<div class="alert alert-warning" role="alert">
+		<h1 class="text-center py-5">No latest event found.</h1>
+	</div>
+@endif
 </x-frontend-layout>
