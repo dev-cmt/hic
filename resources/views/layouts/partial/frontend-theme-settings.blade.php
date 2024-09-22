@@ -8,7 +8,7 @@
             </button>
 
             <div class="modal-body">
-                <img src="{{ asset('public/frontend/images/pop-add-banner.jpg') }}" style="width:100%" alt="">
+                <img src="{{ asset('public'). '/' . $latestEvent->img_path }}" style="width:100%" alt="">
                 <div class="text-center">
                     <a href="{{ route('event.reg') }}" class="btn btn-sm btn-primary mt-2">Register</a>
                 </div>
