@@ -762,25 +762,87 @@
 			</div>
 		</div>
 	</div>
-	<!--==================================================-->
-	<!----START Tabs Section ----->
-	<!--===================================================-->
-	
-	<!--==================================================-->
-	<!---- START Case study Section ----->
-	<!--===================================================-->
-	
-	<!-- Start Case Study Body section-->
-	
-	<!--==================================================-->
-	<!----START TEAM Section ----->
-	<!--===================================================-->
-	
 
 	<!--==================================================-->
-	<!----START Appointment Section----->
+	<!----START Univercity Logo Section ----->
 	<!--===================================================-->
-	
+	<div class="brand-section pt-40 pb-30">
+		<div class="container">
+			<div class="row hr">
+				<div class="col-lg-12">
+					<div class="section-head text-center pb-55">
+						<h2>World Ranking<span> Universities: </span></h2>
+						<span class="section-head-bar-2"></span>
+					</div>
+				</div>
+				<div class="brand-carousel owl-carousel">
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/uk/uk_01.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/uk/uk_02.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/uk/uk_03.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/uk/uk_04.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/uk/uk_05.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/australia/aus_01.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/australia/aus_02.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/australia/aus_03.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/australia/aus_04.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/australia/aus_05.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/australia/aus_06.jpg" alt="Brand">
+					</div>
+						<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/canada/ca_01.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/canada/ca_02.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/canada/ca_03.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/canada/ca_04.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/canada/ca_05.jpg" alt="Brand">
+					</div>
+					<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/malaysia/ma_01.jpg" alt="Brand">
+					</div>
+						<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/malaysia/ma_02.jpg" alt="Brand">
+					</div>
+						<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/malaysia/ma_03.jpg" alt="Brand">
+					</div>
+						<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/malaysia/ma_04.jpg" alt="Brand">
+					</div>
+						<div class="single-brand">
+						<img src="{{asset('public/frontend')}}/images/brand/malaysia/ma_05.jpg" alt="Brand">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!--==================================================-->
 	<!----START CALL-DO-ACTION Section ----->

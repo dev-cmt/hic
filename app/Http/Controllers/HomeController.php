@@ -25,16 +25,82 @@ class HomeController extends Controller
         $user = Auth::user();
         return view('pages.frontend.message', compact('user'));
     }
-    public function services(Request $request): View
+    public function counselingService(Request $request): View
     {
-        $user = Auth::user();
-        return view('pages.frontend.services', compact('user'));
+        return view('pages.frontend.service.counseling');
     }
-    public function studyAbroad(Request $request): View
+    public function ieltsToefl()
     {
-        $user = Auth::user();
-        return view('pages.frontend.study-abroad', compact('user'));
+        return view('pages.frontend.service.ielts_toefl');
     }
+    public function admissionServices()
+    {
+        return view('pages.frontend.service.admission_services');
+    }
+    public function visaProcessing()
+    {
+        return view('pages.frontend.service.visa_processing');
+    }
+    public function accommodationSupport()
+    {
+        return view('pages.frontend.service.accommodation_support');
+    }
+    public function preDepartureBriefing()
+    {
+        return view('pages.frontend.service.pre_departure_briefing');
+    }
+    public function airportPickup()
+    {
+        return view('pages.frontend.service.airport_pickup');
+    }
+    /**Servie End */
+
+    public function studyUK()
+    {
+        return view('pages.frontend.study-abroad.uk');
+    }
+
+    public function studyMalaysia()
+    {
+        return view('pages.frontend.study-abroad.malaysia');
+    }
+
+    public function studyCanada()
+    {
+        return view('pages.frontend.study-abroad.canada');
+    }
+
+    public function studyAustralia()
+    {
+        return view('pages.frontend.study-abroad.australia');
+    }
+
+    public function studyGermany()
+    {
+        return view('pages.frontend.study-abroad.germany');
+    }
+
+    public function studyDubai()
+    {
+        return view('pages.frontend.study-abroad.dubai');
+    }
+
+    public function studyMalta()
+    {
+        return view('pages.frontend.study-abroad.malta');
+    }
+
+    public function studyNewZealand()
+    {
+        return view('pages.frontend.study-abroad.new-zealand');
+    }
+
+    public function studyUSA()
+    {
+        return view('pages.frontend.study-abroad.usa');
+    }
+
+    
     public function galleryPhoto(Request $request): View
     {
         $user = Auth::user();

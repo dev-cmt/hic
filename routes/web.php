@@ -37,8 +37,26 @@ Route::get('/page-activities', [HomeController::class, 'activities'])->name('pag
 Route::get('/page-news', [HomeController::class, 'news'])->name('page.news');
 Route::get('/page-contact', [HomeController::class, 'contact'])->name('page.contact');
 
-Route::get('/page-services', [HomeController::class, 'services'])->name('page.services');
-Route::get('/page-study-abroad', [HomeController::class, 'studyAbroad'])->name('page.study-abroad');
+
+Route::get('/counseling', [HomeController::class, 'counselingService'])->name('page.counseling');
+Route::get('/ielts-toefl', [HomeController::class, 'ieltsToefl'])->name('page.ielts_toefl');
+Route::get('/admission-services', [HomeController::class, 'admissionServices'])->name('page.admission_services');
+Route::get('/visa-processing', [HomeController::class, 'visaProcessing'])->name('page.visa_processing');
+Route::get('/accommodation-support', [HomeController::class, 'accommodationSupport'])->name('page.accommodation_support');
+Route::get('/pre-departure-briefing', [HomeController::class, 'preDepartureBriefing'])->name('page.pre_departure_briefing');
+Route::get('/airport-pickup', [HomeController::class, 'airportPickup'])->name('page.airport_pickup');
+
+
+Route::get('/page-study-abroad/uk', [HomeController::class, 'studyUK'])->name('page.uk');
+Route::get('/page-study-abroad/malaysia', [HomeController::class, 'studyMalaysia'])->name('page.malaysia');
+Route::get('/page-study-abroad/canada', [HomeController::class, 'studyCanada'])->name('page.canada');
+Route::get('/page-study-abroad/australia', [HomeController::class, 'studyAustralia'])->name('page.australia');
+Route::get('/page-study-abroad/germany', [HomeController::class, 'studyGermany'])->name('page.germany');
+Route::get('/page-study-abroad/dubai', [HomeController::class, 'studyDubai'])->name('page.dubai');
+Route::get('/page-study-abroad/malta', [HomeController::class, 'studyMalta'])->name('page.malta');
+Route::get('/page-study-abroad/new-zealand', [HomeController::class, 'studyNewZealand'])->name('page.new_zealand');
+Route::get('/page-study-abroad/usa', [HomeController::class, 'studyUSA'])->name('page.usa');
+
 
 
 Route::get('/page-why-choose', [HomeController::class, 'whyChoose'])->name('why.choose');

@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Helpers\ImageHelper;
 use App\Models\Event;
 use App\Models\EventRegister;
 use Illuminate\Http\Request;
@@ -10,7 +11,7 @@ class EventController extends Controller
 {
     public function index()
     {
-        $events = Event::all();
+        $events = Event::orderBy('id', 'desc')->get();
         return view('pages.backend.events.index', compact('events'));
     }
 
@@ -30,13 +31,10 @@ class EventController extends Controller
             'status' => 'required|boolean',
         ]);
 
-        // Handle file upload
-        $imgPath = $request->file('img_path') ? $request->file('img_path')->store('images', 'public') : null;
-
         Event::create([
             'title' => $request->title,
             'event_date' => $request->event_date,
-            'img_path' => $imgPath,
+            'img_path' => ImageHelper::uploadImage($request->file('img_path'), 'images/event', null),
             'description' => $request->description,
             'vacancies' => $request->vacancies,
             'status' => $request->status,
@@ -48,7 +46,9 @@ class EventController extends Controller
 
     public function show(Event $event)
     {
-        return view('pages.backend.events.show', compact('event'));
+        $eventRegister = EventRegister::where('event_id', $event->id)->get();
+
+        return view('pages.backend.events.show', compact('event', 'eventRegister'));
     }
 
     public function edit(Event $event)
@@ -60,39 +60,22 @@ class EventController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255',
-            'event_date' => 'required|date',
+            'event_date' => 'nullable|date',
             'img_path' => 'nullable|image',
-            'description' => 'required|string',
-            'vacancies' => 'required|integer',
-            'status' => 'required|boolean',
+            'description' => 'nullable|string',
+            'vacancies' => 'nullable|integer',
+            'status' => 'nullable|boolean',
         ]);
-
-        // Handle image upload
-        if ($request->hasFile('img_path')) {
-            // Delete the old image if exists
-            if ($event->img_path) {
-                Storage::disk('public')->delete($event->img_path);
-            }
-
-            // Store the new image
-            $imgPath = $request->file('img_path')->store('images', 'public');
-            $event->img_path = $imgPath;
-        }
 
         // Update event details (excluding image path)
         $event->update([
             'title' => $request->title,
             'event_date' => $request->event_date,
+            'img_path' => ImageHelper::uploadImage($request->file('img_path'), 'images/event', $event->img_path),
             'description' => $request->description,
             'vacancies' => $request->vacancies,
             'status' => $request->status,
         ]);
-
-        // Save the new image path if it was uploaded
-        if (isset($imgPath)) {
-            $event->img_path = $imgPath;
-            $event->save();
-        }
 
         return redirect()->route('events.index')->with('success', 'Event updated successfully!');
     }

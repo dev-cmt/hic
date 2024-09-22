@@ -87,35 +87,36 @@
 				<div class="col-md-9">
 					<nav class="itsoft_menu">
 						<ul class="nav_scroll">
-						<li><a href="{{ url('/') }}" class="{{ Request::is('/') ? 'text-primary' : '' }}">Home</a></li>                            
-<li><a href="{{ route('page.about') }}" class="{{ Route::currentRouteNamed('page.about') ? 'text-primary' : '' }}">About Us</a></li>
+							<li><a href="{{ url('/') }}" class="{{ Request::is('/') ? 'text-primary' : '' }}">Home</a></li>                            
+							<li><a href="{{ route('page.about') }}" class="{{ Route::currentRouteNamed('page.about') ? 'text-primary' : '' }}">About Us</a></li>
 
                             <li><a href="{{route('page.message')}}">Message</a></li>
 							<li>
 								<a href="#">Services<i class="fas fa-angle-down"></i><span><i class="fas fa-angle-right"></i></span></a>
 								<ul class="sub-menu">
-									<li><a href="{{route('page.services')}}">Counseling Services</a></li>
-									<li><a href="#">Authorized IELTS/TOEFL Registration Agent</a></li>
-									<li><a href="#">Admission Services</a></li>
-									<li><a href="#">Visa Processing</a></li>
-									<li><a href="#">Accommodation Support</a></li>
-									<li><a href="#">Pre-Departure Briefing</a></li>
-									<li><a href="#">Airport Pickup</a></li>
+									<li><a href="{{ route('page.counseling') }}">Counseling Services</a></li>
+									<li><a href="{{ route('page.ielts_toefl') }}">Authorized IELTS/TOEFL Registration</a></li>
+									<li><a href="{{ route('page.admission_services') }}">Admission Services</a></li>
+									<li><a href="{{ route('page.visa_processing') }}">Visa Processing</a></li>
+									<li><a href="{{ route('page.accommodation_support') }}">Accommodation Support</a></li>
+									<li><a href="{{ route('page.pre_departure_briefing') }}">Pre-Departure Briefing</a></li>
+									<li><a href="{{ route('page.airport_pickup') }}">Airport Pickup</a></li>
 								</ul>
 							</li>
 
 							<li>
 								<a href="#">Study Abroad<i class="fas fa-angle-down"></i><span><i class="fas fa-angle-right"></i></span></a>
 								<ul class="sub-menu">
-									<li><a href="{{route('page.study-abroad')}}">UK</a></li>
-									<li><a href="#">Malaysia</a></li>
-									<li><a href="#">Canada</a></li>
-									<li><a href="#">Australia</a></li>
-									<li><a href="#">Germany</a></li>
-									<li><a href="#">Dubai</a></li>
-									<li><a href="#">Malta</a></li>
-									<li><a href="#">New Zealand</a></li>
-									<li><a href="#">USA</a></li>
+									<li><a href="{{ route('page.uk') }}">UK</a></li>
+									<li><a href="{{ route('page.malaysia') }}">Malaysia</a></li>
+									<li><a href="{{ route('page.canada') }}">Canada</a></li>
+									<li><a href="{{ route('page.australia') }}">Australia</a></li>
+									<li><a href="{{ route('page.germany') }}">Germany</a></li>
+									<li><a href="{{ route('page.dubai') }}">Dubai</a></li>
+									<li><a href="{{ route('page.malta') }}">Malta</a></li>
+									<li><a href="{{ route('page.new_zealand') }}">New Zealand</a></li>
+									<li><a href="{{ route('page.usa') }}">USA</a></li>
+
 								</ul>
 							</li>
 							<li>

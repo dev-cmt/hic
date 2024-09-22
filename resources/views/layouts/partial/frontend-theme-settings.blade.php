@@ -1,4 +1,4 @@
-@if(!Route::currentRouteNamed('event.reg'))
+@if(!Route::currentRouteNamed('event.reg') && !Route::currentRouteNamed('page.congratulation'))
 <div class="popup-modal modal fade" tabindex="-1" id="sg-modal-add">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">

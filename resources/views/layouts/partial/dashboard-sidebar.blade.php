@@ -31,11 +31,11 @@
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="{{route('events.index')}}">Event List</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="">Service List</a></li>
+                    {{-- <li class="nav-item"> <a class="nav-link" href="">Service List</a></li> --}}
                 </ul>
             </div>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link" href="{{route('event-register.index')}}">
                 <span class="menu-title">Event Register</span>
                 <i class="mdi mdi-contacts menu-icon"></i>
@@ -77,6 +77,6 @@
                     <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
                 </ul>
             </div>
-        </li>
+        </li> --}}
     </ul>
 </nav>

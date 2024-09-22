@@ -36,7 +36,7 @@
                 @if ($event->img_path)
                     <div class="mt-2">
                         <small class="text-muted">Current image:</small>
-                        <img src="{{ asset('storage/' . $event->img_path) }}" alt="Event Image" width="100" class="img-thumbnail mt-1">
+                        <img src="{{ asset('public/' . $event->img_path) }}" alt="Event Image" width="100" class="img-thumbnail mt-1">
                     </div>
                 @endif
             </div>
